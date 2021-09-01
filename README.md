@@ -1,0 +1,50 @@
+# ShoppingCart Rest Api
+
+A Shopping Cart using REST API in python with flask and mongoDB, performs CRUD(Create, Read, Update and Delete) operations on a cart.
+
+
+## Steps to be follow:
+
+* MongoDB : To create and maintain database
+* Postman App : To make requests to API from client side
+* Python(3.7) or (any python3 version): To create the API
+
+### Download and Install Required tools
+* MongoDB Community Version (5.0.1) : https://www.mongodb.com/try/download/community
+* Postman : https://www.postman.com/downloads/
+* Python (3.7) : https://www.python.org/downloads/
+
+### Required packages for python
+* flask : To work with flask framework in python
+* pymongo : To work with MongoDB database from python
+
+#### Operations that can be performed with API
+* Create and/or Add items to cart
+* Get items in cart
+* Update price, quantity for item in cart
+* Remove specific item from cart
+* Empty cart
+#### Explaination about different operations
+##### Create and/or Add items to cart :
+By performing this operation, if the collection/table doesn't exist in MongoDB, than it will create the collection and add item to the cart, else if the collection already exists, then it will add item to existig cart.
+* EndPoint : localhost:5000/carts
+* Methods : POST
+* form_data : "name", "price", "quantity"
+##### Get items in cart :
+This operation allow you to get all the items present in the cart
+* EndPoint : localhost:5000/carts
+* Methods : GET
+##### Update price/quantity of item in cart
+* This operation allow you to update name of item present in the cart by providing item id.
+* EndPoint : localhost:5000/carts/name/{item_id}
+* Methods : PUT
+* form_data : "price", "quantity"
+
+##### Remove specific item from cart
+* This operation allows you to remove specific item from cart by providing its item id.
+* EndPoint : localhost:5000/carts/{item_id}
+* Methods : DELETE
+##### Empty Cart
+* This operation allows you to empty your cart by removing all items in the cart.
+* EndPoint : localhost:5000/carts
+* Methods : DELETE
